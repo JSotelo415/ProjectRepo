@@ -1,0 +1,44 @@
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #1c1c1c;
+  overflow: hidden;
+  z-index: -1;
+
+  span {
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 50%;
+    position: absolute;
+    animation: move linear infinite;
+    backface-visibility: hidden;
+  }
+
+  // Generate styles for each span using SCSS loop
+  @for $i from 0 through 19 {
+    span:nth-child(#{$i + 1}) {
+      $colors: #58a7e4, #083191;
+      color: nth($colors, if($i % 3 == 0, 2, 1));
+
+      top: random(95) + 0%;
+      left: random(95) + 0%;
+      animation-duration: (6 + random(48)) + s;
+      animation-delay: -1 * random(47) + s;
+      transform-origin: (random(50) - 25) + vw (random(50) - 25) + vh;
+      box-shadow: (if(random(2) == 1, -40vmin, 40vmin))
+        0
+        (5 + random()) +
+        vmin
+        currentColor;
+    }
+  }
+}
