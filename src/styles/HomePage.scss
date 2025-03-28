@@ -1,0 +1,10 @@
+.hero {
+  padding-top: 80px; // adjust to be slightly more than navbar height
+  height: calc(100vh - 80px); // make it fill the remaining screen
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+}

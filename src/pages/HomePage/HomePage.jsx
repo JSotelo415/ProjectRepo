@@ -1,25 +1,27 @@
 import React from "react";
-// import AnimatedBackground from "../../componants/AnimatedBackground";
-
+import "../../styles/HomePage.scss";
+// import "../../styles/HomePage.scss";
+import AnimatedBackground from "../../componants/AnimatedBackground";
+import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
-    <section
-      style={{ position: "relative", height: "100vh", overflow: "hidden" }}
-    >
-      {/* <AnimatedBackground /> */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 1,
-          textAlign: "center",
-          paddingTop: "10vh",
-          color: "white",
-        }}
-      >
-        <h1>Welcome to My Portfolio</h1>
-        <p>This is the homepage.</p>
-      </div>
-    </section>
+    <div>
+      {/* Full-screen landing section */}
+      <AnimatedBackground />
+      <section className="hero">
+        {/* <AnimatedBackground /> */}
+        <div>
+          {/* <AnimatedBackground /> */}
+          <h1>Welcome to My Portfolio</h1>
+          <br></br>
+          <Link to="/about">
+            <button>Learn about my experiences</button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Main content section */}
+    </div>
   );
 };
 
